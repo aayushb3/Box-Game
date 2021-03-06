@@ -3,8 +3,9 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-//var platform, projectile;
-//var slingshot, ball;
+var platform, projectile;
+var slingshot,ball;
+var stand,ground;
 
 function setup(){
 
@@ -14,9 +15,9 @@ function setup(){
       engine = Engine.create();
       world = engine.world;
       Engine.run(engine);
-    
+    ball = new Ball(100,100);
     box1 = new Box(400,400);
-    box2 = new Box(350,400);
+    box2 = new Box(350 ,400);
     box3 = new Box(300,400);
     box4 = new Box(250,400);
     box5 = new Box(450,400);
@@ -67,6 +68,7 @@ function draw(){
     background("black");
     Engine.update(engine);
     debug:true;
+    ball.display();
     box1.display("blue");
     box2.display("blue");
     box3.display("blue");
